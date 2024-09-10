@@ -146,37 +146,15 @@
     <axis xyz="0 0 0" />
   </joint> -->
 
-  <!-- livox -->
-  <link name="livox_front_left">
+  <!-- livox (3台が1つのframeでpublishされてる 3台の配置はbase_linkから見たものになっているので tfは0,0,0) -->
+  <link name="livox">
     <origin xyz="0 0 0" rpy="0 0 0" />
   </link>
 
-  <joint name="livox_front_left_joint" type="fixed">
-    <origin xyz="0.67  0.16  0.26" rpy="0.0  ${M_PI} ${M_PI + M_PI/4}" /> <!-- fix here -->
+  <joint name="livox_joint" type="fixed">
+    <origin xyz="0.00  0.00  0.00" rpy="0 0 0" />
     <parent link="base_link" />
-    <child link="livox_front_left" />
-    <axis xyz="0 0 0" />
-  </joint>
-
-  <link name="livox_front_right">
-    <origin xyz="0 0 0" rpy="0 0 0" />
-  </link>
-
-  <joint name="livox_front_right_joint" type="fixed">
-    <origin xyz="0.67  -0.16  0.26" rpy="-0.0  ${M_PI} ${M_PI - M_PI/4}" /> <!-- fix here -->
-    <parent link="base_link" />
-    <child link="livox_front_right" />
-    <axis xyz="0 0 0" />
-  </joint>
-
-  <link name="livox_rear">
-    <origin xyz="0 0 0" rpy="0 0 0 0 0 0" />
-  </link>
-
-  <joint name="livox_rear_joint" type="fixed">
-    <origin xyz="-0.12  0.00  0.20" rpy="3.14159  0.00  3.14159" /> <!-- fix here -->
-    <parent link="base_link" />
-    <child link="livox_rear" />
+    <child link="livox" />
     <axis xyz="0 0 0" />
   </joint>
 
