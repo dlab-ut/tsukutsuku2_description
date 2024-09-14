@@ -99,6 +99,18 @@
   </joint>
 
   <!-- livox (3台が1つのframeでpublishされてる 3台の配置はbase_linkから見たものになっているので tfは0,0,0) -->
+  <link name="livox_link">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+  </link>
+
+  <joint name="livox_joint" type="fixed">
+    <origin xyz="0.0  0.0  0.0" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="livox_link" />
+    <axis xyz="0 0 0" />
+  </joint>
+
+
   <link name="left_livox_link">
     <origin xyz="0 0 0" rpy="0 0 0" />
   </link>

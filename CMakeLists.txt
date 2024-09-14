@@ -15,4 +15,5 @@ ament_auto_package(INSTALL_TO_SHARE
     meshes
     urdf
     ypspur-robot-params
+    launch
 )
